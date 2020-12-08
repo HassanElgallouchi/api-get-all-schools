@@ -13,7 +13,7 @@
 ### Accueil
 ![!](./assets/SchoolDigger_API_interface.png)
 
-### Erruer en cas de non recupération de données
+### Erreur en cas de non récupération des données
 ![!](./assets/SchoolDigger_API_erreur.png)
 
 ### Résultat d'une recherche
