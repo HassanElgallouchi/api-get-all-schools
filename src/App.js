@@ -9,8 +9,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      appID: '3a997a93', 
-      appKey: '0d6e2163aa8d6dcd882c4d849e40a892',
+      appID: '', // mettre appID 
+      appKey: '', // mettre appKey 
       etatEcole: '',
       nomEcole: '',
       listEcoles: [],
@@ -20,8 +20,7 @@ class App extends React.Component {
 
   // handleClick exécute la requete lors de click sur le button 
   handleClick = (e) => {
-    // fetch('https://api.schooldigger.com/v1.2/schools?st=' + this.state.etatEcole + '&q=' + this.state.nomEcole + '&perPage=' + this.state.perPage + '&appID=' + this.state.appID + '&appKey=' + this.state.appKey)
-    fetch('./db.json')
+    fetch('https://api.schooldigger.com/v1.2/schools?st=' + this.state.etatEcole + '&q=' + this.state.nomEcole + '&perPage=' + this.state.perPage + '&appID=' + this.state.appID + '&appKey=' + this.state.appKey)
       .then(res => res.json())
       .then(data => {
         // condition si etatEcole est vide ET etatEecole est non un numéro 
@@ -44,10 +43,15 @@ class App extends React.Component {
   }
 
   render() {
-    // filtrer le tableau listEcoles par le nom de chaque école si il correspond au state taper par l'utilisateur
-    let filterEcoles = this.state.listEcoles.filter((ecole) => {
-      return ecole.schoolName.toLowerCase().includes(this.state.nomEcole.toLowerCase())
-    })
+
+    let filterEcoles
+    if (this.state.listEcoles !== undefined) {
+      
+      // filtrer le tableau listEcoles par le nom de chaque école si il correspond au state taper par l'utilisateur
+      filterEcoles = this.state.listEcoles.filter((ecole) => {
+        return ecole.schoolName.toLowerCase().includes(this.state.nomEcole.toLowerCase())
+      })
+    } 
     return (
       <>
         {/* afficher header composant dans app */}
