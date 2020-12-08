@@ -46,12 +46,14 @@ class App extends React.Component {
 
     let filterEcoles
     if (this.state.listEcoles !== undefined) {
-      
+
       // filtrer le tableau listEcoles par le nom de chaque école si il correspond au state taper par l'utilisateur
       filterEcoles = this.state.listEcoles.filter((ecole) => {
         return ecole.schoolName.toLowerCase().includes(this.state.nomEcole.toLowerCase())
       })
-    } 
+    } else {
+      document.getElementById('erreur').innerHTML = '<div>Oops, une erreur est survenue !!</div>'
+    }
     return (
       <>
         {/* afficher header composant dans app */}
