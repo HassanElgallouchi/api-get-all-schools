@@ -1,0 +1,12 @@
+{
+    "profile": {
+        "name": "hassan",
+        "age": 36
+    },
+    "competences": [
+        "html",
+        "css",
+        "js",
+        "react"
+    ]
+}
