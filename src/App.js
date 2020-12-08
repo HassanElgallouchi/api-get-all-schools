@@ -21,7 +21,7 @@ class App extends React.Component {
   // handleClick exécute la requete lors de click sur le button 
   handleClick = (e) => {
     // fetch('https://api.schooldigger.com/v1.2/schools?st=' + this.state.etatEcole + '&q=' + this.state.nomEcole + '&perPage=' + this.state.perPage + '&appID=' + this.state.appID + '&appKey=' + this.state.appKey)
-    fetch('./ddb.json')
+    fetch('./db.json')
       .then(res => res.json())
       .then(data => {
         // condition si etatEcole est vide ET etatEecole est non un numéro 
